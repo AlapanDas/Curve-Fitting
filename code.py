@@ -90,11 +90,8 @@ else:
     print('listening')
 if __name__=='__main__':
     while True:
-        command = take_command().lower()
-        if "exit" in command or "stop" in command or "shutdown" or "shut down" in command:
-            talk("Your AI assistant kavi is shutting down,Good bye and have a good day (:")
-            break
-        elif 'temperature' in command:
+        command = take_command().lower()        
+        if 'temperature' in command:
              talk("Please tell me the location !")
              location=take_command()
              query2="weather forecast of {}".format(location)
@@ -139,8 +136,7 @@ if __name__=='__main__':
             pywhatkit.playonyt(song)
         elif 'whatsapp' in command:
             phno=input()
-            pywhatkit.sendwhatmsg("+91 {}".format(phno), "Please wait while we send the message",
-                                  13, 58)
+            pywhatkit.sendwhatmsg("+91 {}".format(phno), "hello iam kavi,my boss has told me to text any important info",13, 58)
             print("Successfully Sent!")
             continue
         elif 'who is' in command:
@@ -235,6 +231,8 @@ if __name__=='__main__':
         elif "health of kavi" in command:            
             memory = get_memory_consumption()
             talk("I use {0:.2f} GB..".format(memory))
+        elif "exit" in command or "stop" in command or "shutdown" or "shut down" in command:
+            talk("Your AI assistant kavi is shutting down,Good bye and have a good day (:")
+            break
         else:
             talk("Sorry I did not get that")
-            
