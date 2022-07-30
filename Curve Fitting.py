@@ -46,6 +46,11 @@ elif(choice==2):
      try:
           C=np.linalg.solve(A,B)
           print("y=({:.2f})x^2+({:.2f})x+({:.2f})".format(C[0],C[1],C[2]))
+          x=np.linspace(-10,10,100)
+          y=C[0]*x**2 + C[1]*x + C[2]
+          fig=plt.figure()
+          plt.plot(x,y)
+          plt.show()
      except:
           print("Singular Error ")
 
