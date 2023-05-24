@@ -4,6 +4,9 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 
+a=0
+a=a+2
+
 #Closing Window Function
 def close_win():
    top.destroy()
